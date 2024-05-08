@@ -9,7 +9,10 @@ module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        authors: 'Akina1507',
+        description: 'my-first-app'
+      },
     },
     {
       name: '@electron-forge/maker-zip',
@@ -47,6 +50,19 @@ module.exports = {
       config: {
         certificateFile: './cert.pfx',
         certificatePassword: process.env.CERTIFICATE_PASSWORD
+      }
+    }
+  ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'Akina1507',
+          name: 'Electron-app'
+        },
+        prerelease: false,
+        draft: true
       }
     }
   ]

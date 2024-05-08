@@ -1,28 +1,40 @@
 {
-  "name": "my-electron-app",
-  "version": "1.0.0",
-  "description": "Premiere application electron test",
+  "name": "electron-app",
+  "version": "1.0.4",
+  "description": "Premiere application electron",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Akina1507/Electron-app"
+  },
   "scripts": {
     "start": "electron-forge start",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
   },
   "author": "Akina1507",
   "license": "ISC",
   "devDependencies": {
     "@electron-forge/cli": "^7.4.0",
-    "@electron-forge/maker-deb": "^7.4.0",
-    "@electron-forge/maker-rpm": "^7.4.0",
     "@electron-forge/maker-squirrel": "^7.4.0",
-    "@electron-forge/maker-zip": "^7.4.0",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
-    "@electron-forge/plugin-fuses": "^7.4.0",
-    "@electron/fuses": "^1.8.0",
     "electron": "^29.1.5"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^6.1.8",
+    "update-electron-app": "^3.0.0"
+  },
+  "config": {
+    "forge": {
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_app"
+          }
+        }
+      ]
+    }
   }
 }
